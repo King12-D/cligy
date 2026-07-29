@@ -32,6 +32,6 @@ func (h *Handler) Upload(c *gin.Context) {
 		"content_type": info.ContentType,
 		"etag":         info.ETag,
 		"created_at":   info.CreatedAt,
-		"url":          c.Request.Host + "/files/" + info.ID,
+		"url":          c.Request.Host + "/raw/" + info.ID,
 	})
 }

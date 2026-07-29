@@ -13,7 +13,8 @@ func (h *Handler) List(c *gin.Context) {
 		return
 	}
 	if files == nil {
-		c.JSON(http.StatusOK, gin.H{"files": []*struct{}{}})
+		c.JSON(http.StatusOK, gin.H{"files": []struct{}{}})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"files": files})
 }

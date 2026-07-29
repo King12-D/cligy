@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"time"
 
 	"github.com/king12-D/cligy/internal/model"
 )
@@ -76,6 +77,7 @@ func (s *LocalStorage) Save(name string, contentType string, reader io.Reader) (
 		Size:        size,
 		ContentType: contentType,
 		Path:        fpath,
+		CreatedAt:   time.Now(),
 	}
 	info.GenerateETag()
 
